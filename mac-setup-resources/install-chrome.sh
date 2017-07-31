@@ -1,6 +1,6 @@
 #!/bin/bash
 # This is a chrome installation script.
-# It has not yet been tested and was made mostly by memory on a Linux box.
+# This script has not been fully tested.
 
 # Make sure extra files end up where you will find them
 cd ~/Desktop
