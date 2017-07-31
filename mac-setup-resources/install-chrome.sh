@@ -1,5 +1,5 @@
 #!/bin/bash
-# This is a chrome installation script.
+# This is a chrome installation script for macOS.
 # This script has not been fully tested.
 
 # Make sure extra files end up where you will find them
