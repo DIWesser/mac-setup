@@ -18,7 +18,7 @@ read
 brew install aescrypt exiftool ffmpeg htop kpcli nano npm p7zip pandoc ranger screenfetch testdisk wget youtube-dl
 
 # Install graphical apps
-brew cask install franz shiftit atom dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassx keepassxc calibre teamviewer libreoffice skype gpgtools google-chrome etcher max handbrake
+brew cask install franz shiftit atom dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassx keepassxc calibre teamviewer libreoffice skype gpgtools etcher max handbrake
 
 ### !!! TODO !!!
 # Move Chrome off Homebrew.
