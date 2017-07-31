@@ -342,3 +342,5 @@ killall Dock
 
 # Save a todo list to the desktop as Todo.md
 # List of apps to install from app store
+
+echo "Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
