@@ -340,5 +340,5 @@ killall Dock
 # Save a readme to the desktop as readme.md
 #echo "" >> readme.md
 
-# Save a todo list to the desktop as either Todo.md or Todo.taskpaper
+# Save a todo list to the desktop as Todo.md
 # List of apps to install from app store
