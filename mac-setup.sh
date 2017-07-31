@@ -14,14 +14,20 @@ read
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install CLI apps
+# Install CLI apps with Homebrew
 brew install aescrypt exiftool ffmpeg htop kpcli nano npm p7zip pandoc ranger screenfetch testdisk wget youtube-dl
 
-# Install graphical apps
-brew cask install franz shiftit atom dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassx keepassxc calibre teamviewer libreoffice skype gpgtools etcher max handbrake
+# Install GUI apps with Homebrew Casks
+brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassxc calibre teamviewer typora libreoffice skype gpgtools etcher max handbrake
 
-### !!! TODO !!!
-# Move Chrome off Homebrew.
+# Install with Scripts
+# Make Scripts executable
+
+# Install Atom
+./mac-setup-resources/install-atom.sh
+
+#Instal Chrome
+./mac-setup-resources/install-chrome.sh
 
 # Use David Prandzioch dotfiles
 # cd
