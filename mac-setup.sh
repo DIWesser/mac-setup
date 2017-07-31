@@ -20,13 +20,14 @@ brew install aescrypt exiftool ffmpeg htop kpcli nano npm p7zip pandoc ranger sc
 # Install GUI apps with Homebrew Casks
 brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassxc calibre teamviewer typora libreoffice skype gpgtools etcher max handbrake
 
-# Install with Scripts
-# Make Scripts executable
+# Install self updating apps with Scripts
 
 # Install Atom
+chmod +X mac-setup-resources/install-atom.sh
 ./mac-setup-resources/install-atom.sh
 
 #Instal Chrome
+chmod +x mac-setup-resources/install-chrome.sh
 ./mac-setup-resources/install-chrome.sh
 
 # Use David Prandzioch dotfiles
@@ -34,6 +35,9 @@ brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt v
 # git init
 # git remote add origin https://github.com/dprandzioch/.dotfiles.git
 # git pull origin master
+
+# Add modular app launchers. Since apparently you're not ready to let those go.
+mv -r mac-setup-resource/Launchers ~/Applications/Launchers
 
 #######################################################################
 # Usability enhancements
@@ -98,14 +102,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
-
-
-#######################################################################
-# Calibre
-#######################################################################
-
-# Link Library
-# - [ ] Add this!!!
 
 #######################################################################
 # Finder
@@ -345,8 +341,7 @@ killall Dock
 
 # Save a readme to the desktop as readme.md
 #echo "" >> readme.md
+echo "Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
 
 # Save a todo list to the desktop as Todo.md
 # List of apps to install from app store
-
-echo "Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
