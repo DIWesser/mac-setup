@@ -23,7 +23,7 @@ brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt v
 # Install self updating apps with Scripts
 
 # Install Atom
-chmod +X mac-setup-resources/install-atom.sh
+chmod +x mac-setup-resources/install-atom.sh
 ./mac-setup-resources/install-atom.sh
 
 #Instal Chrome
