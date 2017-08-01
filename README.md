@@ -15,4 +15,5 @@ That's it. There are still a few things that I haven't figured out how to add to
 
 ## Todo
 
-- [ ] Figure out how Homebrew handles installing a multiple packages if one can not be found. 
+- [ ] Figure out how Homebrew handles installing a multiple packages if one can not be found.
+- [ ] Get round to actually testing this thing.
