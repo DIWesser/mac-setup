@@ -21,3 +21,6 @@ alias todo="vim ~/Dropbox/Lists/Personal.taskpaper"
 
 # ls tweaks
 alias la='ls -A'
+
+# Print weather to terminal
+alias weather='wget -qO - http://wttr.in/ | head -7'
