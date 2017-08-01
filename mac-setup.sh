@@ -7,9 +7,9 @@ cd ~/Desktop
 
 # Homebrew requires Xcode CLI tools to be installed. macOS provides stubs for CLI tools
 # that trigger the CLI tools installer when called. So we call `git` to start the installation.
-git
-echo "Press any key when Xcode CLI tools installation is complete..."
-read
+#git
+#echo "Press any key when Xcode CLI tools installation is complete..."
+#read
 
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -108,9 +108,9 @@ defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 #######################################################################
 
 # Automatically open a new Finder window when a volume is mounted
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+#defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+#defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+#defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -119,12 +119,12 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 
 # Disable disk verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+#defaults write com.apple.frameworks.diskimages skip-verify -bool true
+#defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+#defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Show POSIX path as finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+#defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Finder status bar originating from $HOME instead of /
 #defaults write /Library/Preferences/com.apple.finder PathBarRootAtHome -bool YES
@@ -179,9 +179,9 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 # Safari
 #######################################################################
 
-# Privacy: don’t send search queries to Apple
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+# Privacy: send search queries to Apple
+defaults write com.apple.Safari UniversalSearchEnabled -bool true
+defaults write com.apple.Safari SuppressSearchSuggestions -bool false
 
 # Press Tab to highlight each item on a web page
 defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
@@ -200,7 +200,7 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 #defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+#defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -256,7 +256,7 @@ defaults write com.apple.dock autohide-time-modifier -int 0
 #######################################################################
 
 # Disable local time machine backups
-sudo tmutil disablelocal
+tmutil disablelocal
 
 # Disable time machine selection on new hotplug
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
@@ -309,7 +309,7 @@ find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -dele
 #defaults write com.apple.dashboard devmode -bool true
 
 # Enable the debug menu in iCal (pre-10.8)
-defaults write com.apple.iCal IncludeDebugMenu -bool true
+#defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
