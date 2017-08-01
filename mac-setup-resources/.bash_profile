@@ -20,4 +20,4 @@ alias vi='nvim'
 alias todo="vim ~/Dropbox/Lists/Personal.taskpaper"
 
 # ls tweaks
-alias la ='ls -A'
+alias la='ls -A'
