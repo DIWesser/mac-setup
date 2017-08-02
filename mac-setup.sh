@@ -26,15 +26,25 @@ brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt v
 chmod +x mac-setup-resources/install-atom.sh
 ./mac-setup-resources/install-atom.sh
 
-#Instal Chrome
+#Install Chrome
 chmod +x mac-setup-resources/install-chrome.sh
 ./mac-setup-resources/install-chrome.sh
 
-# Use David Prandzioch dotfiles
-# cd
-# git init
-# git remote add origin https://github.com/dprandzioch/.dotfiles.git
-# git pull origin master
+# Use Daniel Wesser's dotfiles
+
+# Create and move to Github Directory
+mkdir ~/Github
+cd ~/Github
+
+# Get dotfiles
+git clone https://github.com/DIWesser/mac-dotfiles.git
+
+# Create symlinks to dotfiles
+chmod +x ~/Github/mac-dotfiles/create-symlinks.sh
+~/Github/mac-dotfiles/create-symlinks.sh
+
+# Return to Desktop
+cd ~/Desktop
 
 # Add modular app launchers. Since apparently you're not ready to let those go.
 mv -r mac-setup-resource/Launchers ~/Applications/Launchers
