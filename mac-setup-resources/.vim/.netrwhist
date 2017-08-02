@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/Daniel/.vim/autoload'
-let g:netrw_dirhist_2='/usr/local/Caskroom/max/0.9.1/Max-0.9.1/README.rtfd'
-let g:netrw_dirhist_3='/Users/Daniel/Desktop/temp'
-let g:netrw_dirhist_4='/Users/Daniel/.vim'
-let g:netrw_dirhist_5='/Users/Daniel/.npm'
