@@ -1,5 +1,16 @@
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+########################################################
+# Look
+########################################################
+
+PS1='\[\033[0;34m\]\u@elli \[\033[0;35m\]\W 〉\[\033[0m\]'
+#PS1="\u@elli \w\n==> "
+
+########################################################
+# Aliases
+########################################################
+
 # Lock computer from terminal
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
