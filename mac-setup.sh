@@ -32,7 +32,7 @@ chmod +x mac-setup-resources/install-chrome.sh
 
 # Use Daniel Wesser's dotfiles
 
-# Create and move to Github Directory
+# Create and work in Github Directory
 mkdir ~/Github
 cd ~/Github
 
