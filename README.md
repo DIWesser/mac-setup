@@ -6,7 +6,7 @@ This is a fork of David Prandzioch's Homebrew based [OSX setup script](https://g
 
 **I haven't tested this script yet. This is still theoretical.**  
 
-1. Clone this repo `cd ~/Desktop && git clone https://github.com/DIWesser/macOS-Setup.git`
+1. Clone this repo `cd ~/Desktop && git clone https://github.com/DIWesser/macos-setup.git`
     - You may need to wait for developer tools to install at this point.
 2. Make the main script executable `cd ~/Desktop && chmod +x mac-setup.sh`.
 3. Run the main script `./mac-setup.sh`
