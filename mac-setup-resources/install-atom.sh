@@ -6,7 +6,7 @@
 cd ~/Desktop
 
 # Download .zip file
-wget -O atom-mac.zip https://atom.io/download/mac
+curl -L -o atom-mac.zip https://atom.io/download/mac
 
 # Open .zip file
 unzip atom-mac.zip
