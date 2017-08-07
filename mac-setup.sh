@@ -13,12 +13,14 @@ cd ~/Desktop
 
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Setup drivers cask
+brew tap caskroom/drivers
 
 # Install CLI apps with Homebrew
 brew install aescrypt exiftool ffmpeg htop kpcli nano npm p7zip pandoc ranger screenfetch testdisk wget youtube-dl
 
 # Install GUI apps with Homebrew Casks
-brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassxc calibre teamviewer typora libreoffice skype gpgtools etcher max handbrake
+brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassxc calibre teamviewer typora libreoffice skype gpgtools etcher max handbrake wacom-intuos-tablet
 
 # Install self updating apps with Scripts
 
