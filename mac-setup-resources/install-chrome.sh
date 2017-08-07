@@ -6,7 +6,6 @@
 cd ~/Desktop
 
 # Download Chrome .dmg
-#wget https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 
 # Open/mount .dmg
