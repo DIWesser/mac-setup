@@ -389,6 +389,14 @@ defaults write org.m0k.transmission WarningLegal -bool false
 killall Finder
 killall Dock
 
+# Personalising
+
+# Symlink  ~/Movies to ~/Video and Hide ~/Movies
+# Because Apple keeps putting things in Movies.
+# Piss off, Apple.
+ln -s ~/Movies ~/Video
+chflags hidden ~/Movies
+
 ########################################################################
 # Post Setup User Info
 ########################################################################
