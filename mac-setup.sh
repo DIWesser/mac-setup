@@ -389,16 +389,15 @@ defaults write org.m0k.transmission WarningLegal -bool false
 killall Finder
 killall Dock
 
+########################################################################
 # Personalising
+########################################################################
 
 # Symlink  ~/Movies to ~/Video and Hide ~/Movies
 # Because Apple keeps putting things in Movies.
 # Piss off, Apple.
 ln -s ~/Movies ~/Video
 chflags hidden ~/Movies
-
-# Enable right click
-defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
 
 ########################################################################
 # Post Setup User Info
@@ -423,7 +422,7 @@ echo "- [ ] [Install DaVinci Resolve](https://www.blackmagicdesign.com/ca/produc
 echo "- [ ] [Install EOS Utility](https://www.usa.canon.com/internet/portal/us/home/support/self-help-center/eos-utility)" >> Todo.md
 echo "- [ ] Install Microsoft Office" >> Todo.md
 echo "- [ ] Setup Clocks" >> Todo.md
-echo "" >> Todo.md
+echo "- [ ] Enable right click on trackpad" >> Todo.md
 echo "" >> Todo.md
 echo "" >> Todo.md
 echo "" >> Todo.md
