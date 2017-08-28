@@ -397,6 +397,9 @@ killall Dock
 ln -s ~/Movies ~/Video
 chflags hidden ~/Movies
 
+# Enable right click
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
+
 ########################################################################
 # Post Setup User Info
 ########################################################################
