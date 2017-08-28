@@ -299,8 +299,11 @@ defaults write com.apple.dock autohide -bool true
 # Maximize autodisplay/hide speed of Dock
 defaults write com.apple.dock autohide-time-modifier -int 0
 
-# Automatically haide and show the Menu Bar
+# Automatically hide and show the Menu Bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Dark Dock
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 #######################################################################
 # Time Machine
