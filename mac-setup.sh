@@ -402,7 +402,7 @@ echo "- [ ] Iterm: Remove Title Bar (Settings > Profiles > Window > Style > No T
 echo "- [ ] [Install Dropbox](https://www.dropbox.com/download?plat=mac&full=1)" >> Todo.md
 echo "- [ ] Import Messages Data" >> Todo.md
 echo "- [ ] Import fstab" >> Todo.md
-echo "- [ ] Change screenshot save location" >> Todo.md
+echo "- [ ] Change screenshot save location (`defaults write com.apple.screencapture location ~/Dropbox/Pictures/Screenshots/Elli`)" >> Todo.md
 echo "- [ ] Sign in to Chrome and [configure extensions](chrome://extensions)" >> Todo.md
 echo "- [ ] Setup encrypted drives" >> Todo.md
 echo "- [ ] Set ShiftIt keyboard shortcuts" >> Todo.md
