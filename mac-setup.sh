@@ -411,7 +411,7 @@ echo "- [ ] Install Creative Cloud" >> Todo.md
 echo "- [ ] [Install DaVinci Resolve](https://www.blackmagicdesign.com/ca/products/davinciresolve/#)" >> Todo.md
 echo "- [ ] [Install EOS Utility](https://www.usa.canon.com/internet/portal/us/home/support/self-help-center/eos-utility)" >> Todo.md
 echo "- [ ] Install Microsoft Office" >> Todo.md
-echo "" >> Todo.md
+echo "- [ ] Setup Clocks" >> Todo.md
 echo "" >> Todo.md
 echo "" >> Todo.md
 echo "" >> Todo.md
