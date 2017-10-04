@@ -1,12 +1,22 @@
 #!/bin/bash
 
-# This profile is a heavily modified version of David Prandzioch's Homebrew based Mac setup script. The script can be found at https://gist.github.com/dprandzioch/84f44e3c271d3c4cf3865969c97244a3 and the blog post he wrote about it can be found at https://www.davd.eu/os-x-automated-provisioning-using-homebrew-and-cask/
+#  This profile is a heavily modified version of David Prandzioch's
+#  Homebrew based Mac setup script. The script can be found at
+#  https://gist.github.com/dprandzioch/84f44e3c271d3c4cf3865969c97244a3
+#  and the blog post he wrote about it can be found at 
+#  https://www.davd.eu/os-x-automated-provisioning-using-homebrew-and-cask/
+
+#Check if run as root
+    if [ $UID -ne 0 ] ; then
+        echo "This script must be run as root. (Use sudo.)"
+        exit 1
+    fi
 
 # Make sure all files land where you expect them to
 cd ~/Desktop
 
-# Homebrew requires Xcode CLI tools to be installed. macOS provides stubs for CLI tools
-# that trigger the CLI tools installer when called. So we call `git` to start the installation.
+#  Homebrew requires Xcode CLI tools to be installed. macOS provides stubs for CLI
+#  tools that trigger the CLI tools installer when called. So we call `git` to start the installation.
 #git
 #echo "Press any key when Xcode CLI tools installation is complete..."
 #read
