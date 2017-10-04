@@ -12,7 +12,7 @@ curl -O https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
 hdiutil mount googlechrome.dmg
 
 # Move .app to /Applications
-cp '/Volumes/Google Chrome/Google Chrome.app' '/Applications'
+cp -r '/Volumes/Google Chrome/Google Chrome.app' '/Applications'
 
 # Unmount .dmg
 hdiutil unmount /Volumes/Google\ Chrome

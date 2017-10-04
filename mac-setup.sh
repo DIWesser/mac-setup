@@ -27,39 +27,75 @@ cd ~/Desktop
 brew tap caskroom/drivers
 
 # Install CLI apps with Homebrew
-brew install aescrypt exiftool ffmpeg htop kpcli nano npm p7zip pandoc ranger screenfetch testdisk wget youtube-dl
+# Apps installed on seperates lines since Homebrew will fail to download any apps
+# if some of them are no longer available.
+brew install aescrypt
+brew install exiftool
+brew install ffmpeg
+brew install htop
+brew install nano
+brew install pandoc
+brew install ranger
+brew install testdisk
+brew install wget
+brew install youtube-dl
 
 # Install GUI apps with Homebrew Casks
-brew cask install atom franz shiftit dropbox vlc iterm2 transmission veracrypt virtualbox virtualbox-extension-pack keepassxc calibre teamviewer typora libreoffice skype gpgtools etcher max handbrake wacom-intuos-tablet
+brew cask install android-file-transfer
+brew cask install calibre
+brew cask install carbon-copy-clone
+#brew cask install dropbox #Disabled because Dropbox is now self updating
+brew cask install etcher
+#brew cask install franz
+brew cask install gpgtools
+brew cask install handbrake
+brew cask install iterm2
+brew cask install keepassxc
+brew cask install libreoffice
+#brew cask install max
+brew cask install shiftit
+brew cask install skype
+brew cask install vlc
+brew cask install taskpaper
+#brew cask install teamviewer
+brew cask install transmission
+brew cask install typora
+brew cask install veracrypt
+brew cask install virtualbox virtualbox-extension-pack
+brew cask install wacom-intuos-tablet
 
 # Install self updating apps with Scripts
 
 # Install Atom
-chmod +x mac-setup-resources/install-atom.sh
-./mac-setup-resources/install-atom.sh
+#chmod +x macos-setup/mac-setup-resources/install-atom.sh
+#./macos-setup/mac-setup-resources/install-atom.sh
 
 #Install Chrome
-chmod +x mac-setup-resources/install-chrome.sh
-./mac-setup-resources/install-chrome.sh
+chmod +x macos-setup/mac-setup-resources/install-chrome.sh
+./macos-setup/mac-setup-resources/install-chrome.sh
 
-# Use Daniel Wesser's dotfiles
+#Install Dropbox
+chmod +x macos-setup/mac-setup-resources/install-dropbox.sh
+./macos-setup/mac-setup-resources/install-dropbox.sh
 
+#Install Google Drive
+chmod +x macos-setup/mac-setup-resources/install-google-drive.sh
+./macos-setup/mac-setup-resources/install-google-drive.sh
+
+# Use Daniel Wesser's dotfiles #Not working yet
 # Create and work in Github Directory
-mkdir ~/Github
-cd ~/Github
-
+#mkdir ~/Git
+#cd ~/Git
 # Get dotfiles
-git clone https://github.com/DIWesser/mac-dotfiles.git
-
+#git clone https://github.com/DIWesser/mac-dotfiles.git
 # Create symlinks to dotfiles
-chmod +x ~/Github/mac-dotfiles/create-symlinks.sh
-~/Github/mac-dotfiles/create-symlinks.sh
-
+chmod +x ~/Git/mac-dotfiles/install.sh
+#~/Git/mac-dotfiles/install.sh
 # Return to Desktop
-cd ~/Desktop
+#cd ~/Desktop
 
 # Add modular app launchers. Since apparently you're not ready to let those go.
-mv -r mac-setup-resource/Launchers ~/Applications/Launchers
+#mv -r mac-setup-resource/Launchers ~/Applications/Launchers
 
 #######################################################################
 # Usability enhancements
@@ -76,22 +112,22 @@ sudo defaults write "/System/Library/User Template/Non_localized/Library/Prefere
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 
 # Enable shutdown dialog
-defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool NO
+#defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool NO
 
 # Accelerated playback on window size adjustment for Cocoa apps
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+#defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Reduce up safari render delay
-defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
+#defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
 
 # Faster keystroke reactions
-defaults write NSGlobalDomain KeyRepeat -int 0
+#defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Disable crash reporter
 defaults write com.apple.CrashReporter DialogType none
 
 # Force Safari to open target links in new tabs
-defaults write com.apple.Safari TargetedClicksCreateTabs -bool true
+#defaults write com.apple.Safari TargetedClicksCreateTabs -bool true
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -102,7 +138,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable system-wide resume
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+#defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Disable smart quotes & dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -117,13 +153,13 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Enable subpixel rendering on non-apple lcds
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
+#defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Enable spring loading for directories
-defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+#defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 #######################################################################
 # Finder
@@ -152,7 +188,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 #defaults write /Library/Preferences/com.apple.finder PathBarRootAtHome -bool YES
 
 # Enable AirDrop on all interfaces
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+#defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Show all file extensions
 /usr/bin/defaults write com.apple.finder AppleShowAllExtensions -bool YES
@@ -163,12 +199,12 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
-# Show warning before changing an extension
-/usr/bin/defaults write com.apple.finder FXEnableExtensionChangeWarning -bool YES
+# Remove warning before changing an extension
+/usr/bin/defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Enable snap-to-grid for icons views (desktop & finder)
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+#/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Use list view in all Finder windows by default
@@ -255,7 +291,7 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 
 #######################################################################
-# Dock
+# Dock & Menu Bar
 #######################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -270,8 +306,14 @@ defaults write com.apple.dock tilesize -int 42
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Maximize autodisplay/hide speed of dock
+# Maximize autodisplay/hide speed of Dock
 defaults write com.apple.dock autohide-time-modifier -int 0
+
+# Automatically hide and show the Menu Bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+# Dark Dock
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
 #######################################################################
 # Time Machine
@@ -358,12 +400,44 @@ killall Finder
 killall Dock
 
 ########################################################################
+# Personalising
+########################################################################
+
+# Symlink  ~/Movies to ~/Video and Hide ~/Movies
+# Because Apple keeps putting things in Movies.
+# Piss off, Apple.
+ln -s ~/Movies ~/Video
+chflags hidden ~/Movies
+
+########################################################################
 # Post Setup User Info
 ########################################################################
 
-# Save a readme to the desktop as readme.md
-#echo "" >> readme.md
-echo "Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
-
 # Save a todo list to the desktop as Todo.md
+echo "- [ ] Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
+echo "- [ ] Show bettery percentage in Menu Bar" >> Todo.md
+echo "- [ ] Make Chrome the default Browser" >> Todo.md
+echo "- [ ] Iterm: Show border around window" >> Todo.md
+echo "- [ ] Iterm: Remove Title Bar (Settings > Profiles > Window > Style > No Title Bar)" >> Todo.md
+echo "- [ ] [Install Dropbox](https://www.dropbox.com/download?plat=mac&full=1)" >> Todo.md
+echo "- [ ] Import Messages Data" >> Todo.md
+echo "- [ ] Import fstab" >> Todo.md
+echo "- [ ] Change screenshot save location (`defaults write com.apple.screencapture location ~/Dropbox/Pictures/Screenshots/Elli`)" >> Todo.md
+echo "- [ ] Sign in to Chrome and [configure extensions](chrome://extensions)" >> Todo.md
+echo "- [ ] Setup encrypted drives" >> Todo.md
+echo "- [ ] Set ShiftIt keyboard shortcuts" >> Todo.md
+echo "- [ ] [Install audacity](http://www.audacityteam.org/download/mac/)" >> Todo.md
+echo "- [ ] Install Creative Cloud" >> Todo.md
+echo "- [ ] [Install DaVinci Resolve](https://www.blackmagicdesign.com/ca/products/davinciresolve/#)" >> Todo.md
+echo "- [ ] [Install EOS Utility](https://www.usa.canon.com/internet/portal/us/home/support/self-help-center/eos-utility)" >> Todo.md
+echo "- [ ] Install Microsoft Office" >> Todo.md
+echo "- [ ] Setup Clocks" >> Todo.md
+echo "- [ ] Enable right click on trackpad" >> Todo.md
+echo "" >> Todo.md
+echo "" >> Todo.md
+echo "" >> Todo.md
+echo "" >> Todo.md
+echo "" >> Todo.md
+
 # List of apps to install from app store
+# Save a readme to the desktop as readme.md
