@@ -7,9 +7,9 @@
 #  https://www.davd.eu/os-x-automated-provisioning-using-homebrew-and-cask/
 
 #Check if run as root
-    if [ $UID -ne 0 ] ; then
+    if [ "$UID" -ne "0" ] ; then # Actual check
         echo "This script must be run as root. (Use sudo.)"
-        exit 1
+        exit 1 # Stop script
     fi
 
 # Make sure all files land where you expect them to
