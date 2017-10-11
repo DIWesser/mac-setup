@@ -52,6 +52,8 @@ brew cask install handbrake
 brew cask install iterm2
 brew cask install keepassxc
 brew cask install libreoffice
+brew cask install java
+brew cask install jgrasp # Java IDE
 #brew cask install max
 brew cask install shiftit
 brew cask install skype
