@@ -72,17 +72,17 @@ chmod +x macos-setup/mac-setup-resources/install-dropbox.sh
 chmod +x macos-setup/mac-setup-resources/install-google-drive.sh
 ./macos-setup/mac-setup-resources/install-google-drive.sh
 
-# Use Daniel Wesser's dotfiles #Not working yet
-# Create and work in Github Directory
-#mkdir ~/Git
-#cd ~/Git
+# Use Daniel Wesser's dotfiles
+# Create and work in Git Directory
+mkdir ~/Git
+cd ~/Git
 # Get dotfiles
-#git clone https://github.com/DIWesser/mac-dotfiles.git
+git clone https://github.com/DIWesser/mac-dotfiles.git
 # Create symlinks to dotfiles
-chmod +x ~/Git/mac-dotfiles/install.sh
-#~/Git/mac-dotfiles/install.sh
+chmod +x mac-dotfiles/install.sh
+./mac-dotfiles/install.sh
 # Return to Desktop
-#cd ~/Desktop
+cd ~/Desktop
 
 # Add modular app launchers. Since apparently you're not ready to let those go.
 #mv -r mac-setup-resource/Launchers ~/Applications/Launchers
