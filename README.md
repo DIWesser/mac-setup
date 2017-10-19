@@ -15,6 +15,6 @@ That's it. There are still a few things that I haven't figured out how to add to
 
 ## Todo
 
+- [ ] Test it again. It's been a while. (I wrote this on 2017-10-18. Let's see when I get to it.)
 - [ ] ~~Figure out how Homebrew handles installing a multiple packages if one can not be found.~~ Meh, it's easier to toggle things if you install one app per line.
 - [x] Actually test it. That would probably be good.
-- [ ] Test it again. It's been a while. (I wrote this on 2017-10-18. Let's see when I get to it.)
