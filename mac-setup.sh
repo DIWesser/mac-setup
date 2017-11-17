@@ -9,7 +9,7 @@
 #Check if run as root
     if [ "$UID" -ne "0" ] ; then # Actual check
         echo "This script must be run as root. (Use sudo.)"
-        exit 1 # Stop script
+        exit 1 # Stop script if 
     fi
 
 # Make sure all files land where you expect them to
@@ -33,7 +33,8 @@ brew install aescrypt
 brew install exiftool
 brew install ffmpeg
 brew install htop
-brew install nano
+brew install mas # Mac App Store CLI
+#brew install nano # Text editor
 brew install pandoc
 brew install ranger
 brew install testdisk
@@ -99,6 +100,23 @@ cd ~/Desktop
 # Add modular app launchers. Since apparently you're not ready to let those go.
 #mv -r mac-setup-resource/Launchers ~/Applications/Launchers
 
+# Install Typora Themes
+# Ash
+#curl -sS https://github.com/typora/typora-ash-theme/archive/master.zip
+#Unzip
+#mv
+
+# Dropbox
+#curl -sS https://raw.githubusercontent.com/ujwaljain/typora-theme-gallery/gh-pages/media/theme/dropbox/dropbox.css
+#mv dropbox.css ~/Library/Application\ Support/abnerworks.Typora/themes/dropbox.css
+
+# Minimalism
+#curl -sS https://github.com/pink-bird/typora-theme-gallery/blob/gh-pages/media/theme/minimalism/minimalism.zip?raw=true
+#unzip
+#mv -r minimalism/minimalism ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism
+#mv minimalism/minimalism-dark.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism-dark.css
+#mv minimalism/minimalism.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism.css
+
 #######################################################################
 # Usability enhancements
 #######################################################################
@@ -162,6 +180,9 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Enable spring loading for directories
 #defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Change scrolling direction
+# Try http://www.tech-recipes.com/rx/11757/os-x-lion-10-7-reverse-scroll-direction/
 
 #######################################################################
 # Finder
