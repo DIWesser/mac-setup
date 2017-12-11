@@ -15,9 +15,9 @@
 # Make sure all files land where you expect them to
 cd ~/Desktop
 
-#  Homebrew requires Xcode CLI tools to be installed. macOS provides stubs for CLI
-#  tools that trigger the CLI tools installer when called. So we call `git` to start the installation.
-#git
+#  Homebrew requires Xcode CLI tools to be installed.
+xcode-select --install
+
 #echo "Press any key when Xcode CLI tools installation is complete..."
 #read
 
@@ -30,6 +30,7 @@ brew tap caskroom/drivers
 # Apps installed on seperates lines since Homebrew will fail to download any apps
 # if some of them are no longer available.
 brew install aescrypt
+brew install coreutils # Current Gnu coreutils (e.g. ls, cat, wc)
 brew install exiftool
 brew install ffmpeg
 brew install htop
@@ -45,7 +46,7 @@ brew install youtube-dl
 brew cask install android-file-transfer
 brew cask install calibre
 brew cask install carbon-copy-clone
-#brew cask install dropbox #Disabled because Dropbox is now self updating
+#brew cask install dropbox #Disabled because Dropbox now self-updates
 brew cask install etcher
 #brew cask install franz
 brew cask install gpgtools
