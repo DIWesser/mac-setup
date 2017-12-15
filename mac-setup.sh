@@ -38,6 +38,8 @@ brew install mas # Mac App Store CLI
 #brew install nano # Text editor
 brew install neovim
 brew install pandoc
+brew install python2
+brew install python3
 brew install ranger
 brew install testdisk
 brew install wget
@@ -87,10 +89,14 @@ chmod +x macos-setup/mac-setup-resources/install-dropbox.sh
 chmod +x macos-setup/mac-setup-resources/install-google-drive.sh
 ./macos-setup/mac-setup-resources/install-google-drive.sh
 
-
 # Install vim-plug (vim plugin manager)
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [[ $(command -v nvim) ]] ; then                              # For Neovim
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+elif [[ $(command -v vim) ]] ; then                             # For Vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 # Use Daniel Wesser's dotfiles
 # Create and work in Git Directory
@@ -124,9 +130,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 #mv minimalism/minimalism-dark.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism-dark.css
 #mv minimalism/minimalism.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism.css
 
-#######################################################################
+#################################################################################
 # Usability enhancements
-#######################################################################
+#################################################################################
 
 # Disable iCloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool NO
@@ -191,9 +197,9 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Change scrolling direction
 # Try http://www.tech-recipes.com/rx/11757/os-x-lion-10-7-reverse-scroll-direction/
 
-#######################################################################
+#################################################################################
 # Finder
-#######################################################################
+#################################################################################
 
 # Automatically open a new Finder window when a volume is mounted
 #defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
@@ -263,9 +269,9 @@ defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 
-#######################################################################
+#################################################################################
 # Safari
-#######################################################################
+#################################################################################
 
 # Privacy: send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool true
@@ -299,9 +305,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 
-#######################################################################
+#################################################################################
 # Mail
-#######################################################################
+#################################################################################
 
 # Disable send and reply animations in Mail.app
 defaults write com.apple.mail DisableReplyAnimations -bool true
@@ -320,9 +326,9 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 #defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 
-#######################################################################
+#################################################################################
 # Dock & Menu Bar
-#######################################################################
+#################################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 #defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -345,9 +351,9 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool true
 # Dark Dock
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
-#######################################################################
+#################################################################################
 # Time Machine
-#######################################################################
+#################################################################################
 
 # Disable local time machine backups
 tmutil disablelocal
@@ -362,9 +368,9 @@ defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -bool
 #/usr/bin/defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool YES
 
 
-########################################################################
+#################################################################################
 # Performance tuning
-#######################################################################
+#################################################################################
 
 # Disable animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
@@ -389,9 +395,9 @@ find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -dele
 #sudo pmset -a sms 0
 
 
-########################################################################
+#################################################################################
 # Utilities
-########################################################################
+#################################################################################
 
 # Terminal: Only use UTF-8 in Terminal.app
 #defaults write com.apple.terminal StringEncodings -array 4
@@ -429,21 +435,21 @@ defaults write org.m0k.transmission WarningLegal -bool false
 killall Finder
 killall Dock
 
-########################################################################
+#################################################################################
 # Personalising
-########################################################################
+#################################################################################
 
 # Symlink  ~/Movies to ~/Video and Hide ~/Movies
 # Because Apple keeps putting things in Movies.
 # Piss off, Apple.
 ln -s ~/Movies ~/Video
 chflags hidden ~/Movies
-
-########################################################################
+#################################################################################
 # Post Setup User Info
-########################################################################
+#################################################################################
 
 # Save a todo list to the desktop as Todo.md
+#echo "" >> Todo.md
 echo "- [ ] Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
 echo "- [ ] Show bettery percentage in Menu Bar" >> Todo.md
 echo "- [ ] Make Chrome the default Browser" >> Todo.md
@@ -463,11 +469,6 @@ echo "- [ ] [Install EOS Utility](https://www.usa.canon.com/internet/portal/us/h
 echo "- [ ] Install Microsoft Office" >> Todo.md
 echo "- [ ] Setup Clocks" >> Todo.md
 echo "- [ ] Enable right click on trackpad" >> Todo.md
-echo "" >> Todo.md
-echo "" >> Todo.md
-echo "" >> Todo.md
-echo "" >> Todo.md
-echo "" >> Todo.md
 
 # List of apps to install from app store
 # Save a readme to the desktop as readme.md
