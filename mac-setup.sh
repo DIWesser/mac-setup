@@ -72,6 +72,8 @@ if [[ $(command -v brew) ]] ; then
     brew cask install veracrypt
     brew cask install virtualbox virtualbox-extension-pack
     brew cask install wacom-intuos-tablet
+else
+    echo "Homebrew is not installed."
 fi
 
 # Install Mac App Store apps
@@ -88,6 +90,8 @@ if [[ $(command -v mas) ]] ; then
     mas install 09203825  # Numbers
     mas install 09201541  # Pages
     mas install 176895641 # Spark
+else
+    echo "mas is not installed. No apps will be installed from the App Store."
 fi
 
 # Install self updating apps with Scripts
@@ -115,6 +119,9 @@ if [[ $(command -v nvim) ]] ; then                              # For Neovim
 elif [[ $(command -v vim) ]] ; then                             # For Vim
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+else
+    echo "Neither Vim or Neovim are installed. vim-plug will not be installed."
+    echo "Also, what did you do?!?!"
 fi
 
 # Use Daniel Wesser's dotfiles
