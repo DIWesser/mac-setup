@@ -12,7 +12,7 @@ if [ "$UID" -ne "0" ] ; then # Actual check
     exit 1 # Stop script if 
 fi
 
-# Make sure all files land where you expect them to
+# Leave stray files where you will find them.
 cd ~/Desktop
 
 #  Homebrew requires Xcode CLI tools to be installed.
@@ -22,7 +22,8 @@ xcode-select --install
 #read
 
 # Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL \
+    https://raw.githubusercontent.com/Homebrew/install/master/install)"
 if [[ $(command -v brew) ]] ; then
     # Setup drivers cask
     brew tap caskroom/drivers
