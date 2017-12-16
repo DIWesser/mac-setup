@@ -7,10 +7,10 @@
 #  https://www.davd.eu/os-x-automated-provisioning-using-homebrew-and-cask/
 
 #Check if run as root
-    if [ "$UID" -ne "0" ] ; then # Actual check
-        echo "This script must be run as root. (Use sudo.)"
-        exit 1 # Stop script if 
-    fi
+if [ "$UID" -ne "0" ] ; then # Actual check
+    echo "This script must be run as root. (Use sudo.)"
+    exit 1 # Stop script if 
+fi
 
 # Make sure all files land where you expect them to
 cd ~/Desktop
@@ -23,53 +23,72 @@ xcode-select --install
 
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# Setup drivers cask
-brew tap caskroom/drivers
+if [[ $(command -v brew) ]] ; then
+    # Setup drivers cask
+    brew tap caskroom/drivers
 
-# Install CLI apps with Homebrew
-# Apps installed on seperates lines since Homebrew will fail to download any apps
-# if some of them are no longer available.
-brew install aescrypt
-brew install coreutils # Current Gnu coreutils (e.g. ls, cat, wc)
-brew install exiftool
-brew install ffmpeg
-brew install htop
-brew install mas # Mac App Store CLI
-#brew install nano # Text editor
-brew install neovim
-brew install pandoc
-brew install python2
-brew install python3
-brew install ranger
-brew install testdisk
-brew install wget
-brew install youtube-dl
+    # Install CLI apps with Homebrew
+    # Apps installed on seperates lines since Homebrew will fail to download any apps
+    # if some of them are no longer available.
+    brew install aescrypt
+    brew install coreutils # Current Gnu coreutils (e.g. ls, cat, wc)
+    brew install exiftool
+    brew install ffmpeg
+    brew install htop
+    brew install mas # Mac App Store CLI
+    #brew install nano # Text editor
+    brew install neovim
+    brew install pandoc
+    brew install python2
+    brew install python3
+    brew install ranger
+    brew install testdisk
+    brew install wget
+    brew install youtube-dl
 
-# Install GUI apps with Homebrew Casks
-brew cask install android-file-transfer
-brew cask install calibre
-brew cask install carbon-copy-clone
-#brew cask install dropbox #Disabled because Dropbox now self-updates
-brew cask install etcher
-#brew cask install franz
-brew cask install gpgtools
-brew cask install handbrake
-brew cask install iterm2
-brew cask install keepassxc
-brew cask install libreoffice
-brew cask install java
-#brew cask install jgrasp # Java IDE
-#brew cask install max
-brew cask install shiftit
-brew cask install skype
-brew cask install vlc
-brew cask install taskpaper
-#brew cask install teamviewer
-brew cask install transmission
-brew cask install typora
-brew cask install veracrypt
-brew cask install virtualbox virtualbox-extension-pack
-brew cask install wacom-intuos-tablet
+    # Install GUI apps with Homebrew Casks
+    brew cask install android-file-transfer
+    brew cask install calibre
+    brew cask install carbon-copy-clone
+    #brew cask install dropbox #Disabled because Dropbox now self-updates
+    brew cask install etcher
+    #brew cask install franz
+    brew cask install gpgtools
+    brew cask install handbrake
+    brew cask install iterm2
+    brew cask install keepassxc
+    brew cask install libreoffice
+    brew cask install java
+    #brew cask install jgrasp # Java IDE
+    #brew cask install max
+    brew cask install mas             # Mac App Store CLI client
+    brew cask install shiftit         # Manipulate windows with keyboard
+    brew cask install skype
+    brew cask install vlc
+    brew cask install taskpaper
+    #brew cask install teamviewer
+    brew cask install transmission
+    brew cask install typora
+    brew cask install veracrypt
+    brew cask install virtualbox virtualbox-extension-pack
+    brew cask install wacom-intuos-tablet
+fi
+
+# Install Mac App Store apps
+if [[ $(command -v mas) ]] ; then
+    mas install 66042322  # 123D Design
+    mas install 15318186  # 123D Make
+    mas install 118136179 # AutoMute
+    mas install 25264550  # Blackmagic Disk Speed Test
+    mas install 414554506 # Clocks
+    mas install 424389933 # Final Cut Pro
+    mas install 82658836  # GarageBand
+    mas install 09183694  # Keynote
+    mas install 41258766  # Magnet
+    mas install 09203825  # Numbers
+    mas install 09201541  # Pages
+    mas install 176895641 # Spark
+fi
 
 # Install self updating apps with Scripts
 
