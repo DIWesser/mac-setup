@@ -49,11 +49,13 @@ if [[ $(command -v brew) ]] ; then
 
     # Install GUI apps with Homebrew Casks
     brew cask install android-file-transfer
+    #brew cask install atom
     brew cask install calibre
     brew cask install carbon-copy-clone
-    #brew cask install dropbox #Disabled because Dropbox now self-updates
+    brew cask install dropbox
     brew cask install etcher
     #brew cask install franz
+    brew cask install google-chrome
     brew cask install gpgtools
     brew cask install handbrake
     brew cask install iterm2
@@ -96,20 +98,7 @@ else
 fi
 
 # Install self updating apps with Scripts
-
-# Install Atom
-#chmod +x macos-setup/mac-setup-resources/install-atom.sh
-#./macos-setup/mac-setup-resources/install-atom.sh
-
-#Install Chrome
-chmod +x macos-setup/mac-setup-resources/install-chrome.sh
-./macos-setup/mac-setup-resources/install-chrome.sh
-
-#Install Dropbox
-chmod +x macos-setup/mac-setup-resources/install-dropbox.sh
-./macos-setup/mac-setup-resources/install-dropbox.sh
-
-#Install Google Drive
+# Install Google Drive
 chmod +x macos-setup/mac-setup-resources/install-google-drive.sh
 ./macos-setup/mac-setup-resources/install-google-drive.sh
 
