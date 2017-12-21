@@ -39,6 +39,7 @@ if [[ $(command -v brew) ]] ; then
     brew install mas # Mac App Store CLI
     #brew install nano # Text editor
     brew install neovim
+    #brew install node # Node.js (Needed for surge.sh)
     brew install pandoc
     brew install python2
     brew install python3
@@ -58,23 +59,24 @@ if [[ $(command -v brew) ]] ; then
     brew cask install google-chrome
     brew cask install gpgtools
     brew cask install handbrake
-    brew cask install iterm2
-    brew cask install keepassxc
+    brew cask install iterm2                        # Terminal emulator
+    brew cask install keepassxc                     # Password manager
     brew cask install libreoffice
     brew cask install java
-    #brew cask install jgrasp # Java IDE
+    #brew cask install jgrasp                        # Java IDE
     #brew cask install max
-    brew cask install mas             # Mac App Store CLI client
-    brew cask install shiftit         # Manipulate windows with keyboard
+    brew cask install mas                           # Mac App Store CLI client
+    brew cask install shiftit                       # Manipulate windows with keyboard
     brew cask install skype
+    brew cask install toggl                         # Time tracking
     brew cask install vlc
-    brew cask install taskpaper
+    brew cask install taskpaper                     # Todo lists
     #brew cask install teamviewer
-    brew cask install transmission
-    brew cask install typora
+    brew cask install transmission                  # Bittorrent client
+    brew cask install typora                        # Markdown editor
     brew cask install veracrypt
     brew cask install virtualbox virtualbox-extension-pack
-    brew cask install wacom-intuos-tablet
+    brew cask install wacom-intuos-tablet           # Graphics tablet drivers
 else
     echo "Homebrew is not installed."
 fi
@@ -86,7 +88,7 @@ if [[ $(command -v mas) ]] ; then
     mas install 118136179 # AutoMute
     mas install 25264550  # Blackmagic Disk Speed Test
     mas install 414554506 # Clocks
-    mas install 424389933 # Final Cut Pro
+    #mas install 424389933 # Final Cut Pro
     mas install 82658836  # GarageBand
     mas install 09183694  # Keynote
     mas install 41258766  # Magnet
@@ -95,6 +97,12 @@ if [[ $(command -v mas) ]] ; then
     mas install 176895641 # Spark
 else
     echo "mas is not installed. No apps will be installed from the App Store."
+fi
+
+if [[ $(command -v npm) ]] ; then
+    npm install --global surge # Surge.sh
+else
+    echo "Node.js is not installed."
 fi
 
 # Install self updating apps with Scripts
