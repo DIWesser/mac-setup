@@ -64,6 +64,7 @@ if [[ $(command -v brew) ]] ; then
     brew cask install libreoffice
     brew cask install java
     #brew cask install jgrasp                        # Java IDE
+    brew cask install mactex                        # LaTeX package
     #brew cask install max
     brew cask install mas                           # Mac App Store CLI client
     brew cask install shiftit                       # Manipulate windows with keyboard
@@ -82,7 +83,7 @@ else
 fi
 
 # Install Mac App Store apps
-if [[ $(command -v mas) ]] ; then
+if [[ $(command -v mas) ]] ; then              # Installed by Homebrew
     mas install 66042322  # 123D Design
     mas install 15318186  # 123D Make
     mas install 118136179 # AutoMute
@@ -99,8 +100,8 @@ else
     echo "mas is not installed. No apps will be installed from the App Store."
 fi
 
-if [[ $(command -v npm) ]] ; then
-    npm install --global surge # Surge.sh
+if [[ $(command -v npm) ]] ; then      # Installed by Homebrew
+    #npm install --global surge # Surge.sh
 else
     echo "Node.js is not installed."
 fi
