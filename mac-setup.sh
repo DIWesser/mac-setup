@@ -45,6 +45,7 @@ if [[ $(command -v brew) ]] ; then
     brew install python3
     brew install ranger
     brew install testdisk
+    brew install tmux
     brew install wget
     brew install youtube-dl
 
