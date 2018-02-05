@@ -125,6 +125,14 @@ else
     echo "Also, what did you do?!?!"
 fi
 
+# Install extra LaTeX packages
+if [[ $(command -v tlmgr) ]] ; then              # Installed by Homebrew
+    tlmgr update --self                          # Upgrade LaTeX package manager
+    tlmgr install biblatex
+else
+    echo "You do not have a LaTeX package installed."
+fi
+
 # Use Daniel Wesser's dotfiles
 # Create and work in Git Directory
 #mkdir ~/Git
