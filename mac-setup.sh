@@ -51,7 +51,8 @@ if [[ $(command -v brew) ]] ; then
 
     # Install GUI apps with Homebrew Casks
     brew cask install android-file-transfer
-    #brew cask install atom
+    brew cask install atom
+    brew cask install basictex                      # Minimal LaTeX package
     brew cask install calibre
     brew cask install carbon-copy-clone
     brew cask install dropbox
@@ -65,7 +66,7 @@ if [[ $(command -v brew) ]] ; then
     brew cask install libreoffice
     brew cask install java
     #brew cask install jgrasp                        # Java IDE
-    brew cask install mactex                        # LaTeX package
+    #brew cask install mactex                        # Full LaTeX package
     #brew cask install max
     brew cask install mas                           # Mac App Store CLI client
     brew cask install shiftit                       # Manipulate windows with keyboard
