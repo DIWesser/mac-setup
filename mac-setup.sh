@@ -36,6 +36,7 @@ if [[ $(command -v brew) ]] ; then
     brew install exiftool
     brew install ffmpeg
     brew install htop
+    brew install joe
     brew install mas # Mac App Store CLI
     #brew install nano # Text editor
     brew install neovim
