@@ -38,6 +38,7 @@ if [[ $(command -v brew) ]] ; then
     brew install htop
     brew install joe
     brew install mas # Mac App Store CLI
+    brew install mpv # CLI media player
     #brew install nano # Text editor
     brew install neovim
     #brew install node # Node.js (Needed for surge.sh)
