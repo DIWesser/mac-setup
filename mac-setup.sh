@@ -28,30 +28,36 @@ if [[ $(command -v brew) ]] ; then
     # Setup drivers cask
     brew tap caskroom/drivers
 
+    #############################################################################
     # Install CLI apps with Homebrew
-    # Apps installed on seperates lines since Homebrew will fail to download any apps
-    # if some of them are no longer available.
-    brew install aescrypt
-    brew install coreutils # Current Gnu coreutils (e.g. ls, cat, wc)
-    brew install exiftool
-    brew install ffmpeg
+    #
+    # Apps installed one at a time as Homebrew will not download any packages if
+    # any of the rest no longer exist.
+    #############################################################################
+    brew install aescrypt                           # File encryption tool
+    brew install coreutils                          # Current Gnu coreutils
+    brew install exiftool                           # Image metadata tool
+    brew install ffmpeg                             # Media transcoder
     brew install htop
-    brew install joe
-    brew install mas # Mac App Store CLI
-    brew install mpv # CLI media player
-    #brew install nano # Text editor
-    brew install neovim
-    #brew install node # Node.js (Needed for surge.sh)
-    brew install pandoc
+    brew install joe                                # Text editor
+    brew install mas                                # Mac App Store CLI
+    brew install mpv                                # CLI media player
+    #brew install nano                              # Text editor
+    brew install neovim                             # Text editor
+    #brew install node                              # Node.js
+    brew install pandoc                             # Document conversion
     brew install python2
     brew install python3
-    brew install ranger
+    brew install ranger                             # File manager
     brew install testdisk
     brew install tmux
-    brew install wget
+    brew install wget                               # Downlod utility
     brew install youtube-dl
 
+
+    #############################################################################
     # Install GUI apps with Homebrew Casks
+    #############################################################################
     brew cask install android-file-transfer
     brew cask install atom
     brew cask install basictex                      # Minimal LaTeX package
@@ -64,42 +70,43 @@ if [[ $(command -v brew) ]] ; then
     brew cask install gpgtools
     brew cask install handbrake
     brew cask install iterm2                        # Terminal emulator
-    brew cask install keepassxc                     # Password manager
-    brew cask install libreoffice
     brew cask install java
     #brew cask install jgrasp                        # Java IDE
+    brew cask install keepassxc                     # Password manager
+    brew cask install libreoffice
     #brew cask install mactex                        # Full LaTeX package
-    #brew cask install max
     brew cask install mas                           # Mac App Store CLI client
-    brew cask install shiftit                       # Manipulate windows with keyboard
+    #brew cask install max
+    brew cask install shiftit                       # Window tiling
     brew cask install skype
-    brew cask install toggl                         # Time tracking
-    brew cask install vlc
     brew cask install taskpaper                     # Todo lists
     #brew cask install teamviewer
     brew cask install transmission                  # Bittorrent client
+    brew cask install toggl                         # Time tracking
     brew cask install typora                        # Markdown editor
     brew cask install veracrypt
-    brew cask install virtualbox virtualbox-extension-pack
+    brew cask install virtualbox                    # VM hosting
+    brew cask install virtualbox-extension-pack     # Virtualbox enhancers
+    brew cask install vlc
     brew cask install wacom-intuos-tablet           # Graphics tablet drivers
 else
     echo "Homebrew is not installed."
 fi
 
 # Install Mac App Store apps
-if [[ $(command -v mas) ]] ; then              # Installed by Homebrew
-    mas install 66042322  # 123D Design
-    mas install 15318186  # 123D Make
-    mas install 118136179 # AutoMute
+if [[ $(command -v mas) ]] ; then            # Installed by Homebrew
+    mas install 66042322  # 123D Design      # 3D CAD
+    mas install 15318186  # 123D Make        # 3D CAD
+    mas install 118136179 # AutoMute         # Mute audio to avoid awkwardness
     mas install 25264550  # Blackmagic Disk Speed Test
-    mas install 414554506 # Clocks
-    #mas install 424389933 # Final Cut Pro
-    mas install 82658836  # GarageBand
-    mas install 09183694  # Keynote
-    mas install 41258766  # Magnet
-    mas install 09203825  # Numbers
-    mas install 09201541  # Pages
-    mas install 176895641 # Spark
+    mas install 414554506 # Clocks           # Multiple timezones in menu bar
+    #mas install 424389933 # Final Cut Pro    # Video editor
+    mas install 82658836  # GarageBand       # Audio editing
+    mas install 09183694  # Keynote          # Presentations
+    mas install 41258766  # Magnet           # Window tiling
+    mas install 09203825  # Numbers          # Spreadsheets
+    mas install 09201541  # Pages            # Word processor
+    mas install 176895641 # Spark            # Email client
 else
     echo "mas is not installed. No apps will be installed from the App Store."
 fi
@@ -167,10 +174,10 @@ fi
 #mv minimalism/minimalism-dark.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism-dark.css
 #mv minimalism/minimalism.css ~/Library/Application\ Support/abnerworks.Typora/themes/minimalism.css
 
+
 #################################################################################
 # Usability enhancements
 #################################################################################
-
 # Disable iCloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool NO
 sudo defaults write "/System/Library/User Template/Non_localized/Library/Preferences/com.apple.SetupAssistant" DidSeeCloudSetup -bool YES
@@ -234,10 +241,10 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Change scrolling direction
 # Try http://www.tech-recipes.com/rx/11757/os-x-lion-10-7-reverse-scroll-direction/
 
+
 #################################################################################
 # Finder
 #################################################################################
-
 # Automatically open a new Finder window when a volume is mounted
 #defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 #defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
@@ -309,7 +316,6 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 #################################################################################
 # Safari
 #################################################################################
-
 # Privacy: send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool true
 defaults write com.apple.Safari SuppressSearchSuggestions -bool false
@@ -345,7 +351,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 #################################################################################
 # Mail
 #################################################################################
-
 # Disable send and reply animations in Mail.app
 defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
@@ -366,7 +371,6 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 #################################################################################
 # Dock & Menu Bar
 #################################################################################
-
 # Enable highlight hover effect for the grid view of a stack (Dock)
 #defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
@@ -388,10 +392,10 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool true
 # Dark Dock
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
+
 #################################################################################
 # Time Machine
 #################################################################################
-
 # Disable local time machine backups
 tmutil disablelocal
 
@@ -408,7 +412,6 @@ defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -bool
 #################################################################################
 # Performance tuning
 #################################################################################
-
 # Disable animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
 defaults write -g QLPanelAnimationDuration -float 0
@@ -435,7 +438,6 @@ find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -dele
 #################################################################################
 # Utilities
 #################################################################################
-
 # Terminal: Only use UTF-8 in Terminal.app
 #defaults write com.apple.terminal StringEncodings -array 4
 
@@ -472,23 +474,24 @@ defaults write org.m0k.transmission WarningLegal -bool false
 killall Finder
 killall Dock
 
+
 #################################################################################
 # Personalising
 #################################################################################
-
 # Symlink  ~/Movies to ~/Video and Hide ~/Movies
 # Because Apple keeps putting things in Movies.
 # Piss off, Apple.
 ln -s ~/Movies ~/Video
 chflags hidden ~/Movies
+
+
 #################################################################################
 # Post Setup User Info
 #################################################################################
-
 # Save a todo list to the desktop as Todo.md
 #echo "" >> Todo.md
 echo "- [ ] Install [Dalhousie VPN](https://vpn.its.dal.ca/)" >> Todo.md
-echo "- [ ] Show bettery percentage in Menu Bar" >> Todo.md
+echo "- [ ] Show battery percentage in Menu Bar" >> Todo.md
 echo "- [ ] Make Chrome the default Browser" >> Todo.md
 echo "- [ ] Iterm: Show border around window" >> Todo.md
 echo "- [ ] Iterm: Remove Title Bar (Settings > Profiles > Window > Style > No Title Bar)" >> Todo.md
@@ -507,5 +510,4 @@ echo "- [ ] Install Microsoft Office" >> Todo.md
 echo "- [ ] Setup Clocks" >> Todo.md
 echo "- [ ] Enable right click on trackpad" >> Todo.md
 
-# List of apps to install from app store
 # Save a readme to the desktop as readme.md
