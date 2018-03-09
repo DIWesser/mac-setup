@@ -46,6 +46,7 @@ if [[ $(command -v brew) ]] ; then
     brew install neovim                             # Text editor
     #brew install node                              # Node.js
     brew install pandoc                             # Document conversion
+    brew install poppler                            # PDF utility
     brew install python2
     brew install python3
     brew install ranger                             # File manager
@@ -89,6 +90,7 @@ if [[ $(command -v brew) ]] ; then
     brew cask install virtualbox-extension-pack     # Virtualbox enhancers
     brew cask install vlc
     brew cask install wacom-intuos-tablet           # Graphics tablet drivers
+    brew cask install zotero                        # e-book/reference manager
 else
     echo "Homebrew is not installed."
 fi
