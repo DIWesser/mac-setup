@@ -63,7 +63,7 @@ if [[ $(command -v brew) ]] ; then
     brew cask install atom
     brew cask install basictex                      # Minimal LaTeX package
     brew cask install calibre
-    brew cask install carbon-copy-clone
+    brew cask install carbon-copy-cloner
     brew cask install dropbox
     brew cask install etcher
     #brew cask install franz
