@@ -34,16 +34,16 @@ if [[ $(command -v brew) ]] ; then
     # Apps installed one at a time as Homebrew will not download any packages if
     # any of the rest no longer exist.
     #############################################################################
-    brew install aescrypt                           # File encryption tool
+    #brew install aescrypt                           # File encryption tool
     brew install coreutils                          # Current Gnu coreutils
     brew install exiftool                           # Image metadata tool
     brew install ffmpeg                             # Media transcoder
     brew install htop
-    brew install joe                                # Text editor
+    #brew install joe                                # Text editor
     brew install mas                                # Mac App Store CLI
     brew install mpv                                # CLI media player
     #brew install nano                              # Text editor
-    brew install neovim                             # Text editor
+    #brew install neovim                             # Text editor
     #brew install node                              # Node.js
     brew install pandoc                             # Document conversion
     brew install poppler                            # PDF utility
