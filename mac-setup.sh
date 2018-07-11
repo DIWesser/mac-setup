@@ -237,6 +237,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Exclude drop shadow from screenshots
+defaults write com.apple.screencapture disable-shadow -bool FALSE
+
 # Enable spring loading for directories
 #defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
@@ -472,7 +475,8 @@ defaults write org.m0k.transmission WarningDonate -bool false
 defaults write org.m0k.transmission WarningLegal -bool false
 
 
-# Restart Finder & Dock
+# Restart little things
+killall SystemUIServer
 killall Finder
 killall Dock
 
