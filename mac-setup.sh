@@ -246,6 +246,9 @@ defaults write com.apple.screencapture disable-shadow -bool FALSE
 # Change scrolling direction
 # Try http://www.tech-recipes.com/rx/11757/os-x-lion-10-7-reverse-scroll-direction/
 
+# Hide Desktop icons
+defaults write com.apple.finder CreateDesktop -bool false
+
 
 #################################################################################
 # Finder
